@@ -9,5 +9,6 @@ func _ready() -> void:
 	Signals.item_picked_up.connect(_on_item_pickedUp)
 
 func _on_item_pickedUp():
+	print("item picked up!")
 	items = items + 1
 	rocket.value = items / goalItems
