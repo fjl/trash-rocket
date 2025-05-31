@@ -1,4 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmtxjib87m1mh"]
+[gd_scene load_steps=16 format=3 uid="uid://bp64oap7dsaxu"]
+
+[ext_resource type="PackedScene" uid="uid://ckrjvxllmg0d7" path="res://path_following/PathFollower.tscn" id="1_r40rm"]
+[ext_resource type="PackedScene" uid="uid://wqkbeeibuqw1" path="res://Enemy.tscn" id="2_6q4t8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocsrq"]
 size = Vector2(159, 36.5)
@@ -35,6 +38,12 @@ size = Vector2(74, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3opl0"]
 size = Vector2(42, 126)
+
+[sub_resource type="Curve2D" id="Curve2D_ocsrq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 96, 482, 0, 0, 0, 0, 195, 479, 0, 0, 0, 0, 198, 638, 0, 0, 0, 0, 90, 644, 0, 0, 0, 0, 90, 592, 0, 0, 0, 0, 163, 589, 0, 0, 0, 0, 163, 501, 0, 0, 0, 0, 96, 499, 0, 0, 0, 0, 96, 482)
+}
+point_count = 9
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-71, -97)
@@ -97,3 +106,14 @@ shape = SubResource("RectangleShape2D_jifot")
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="Walls"]
 position = Vector2(169, 432)
 shape = SubResource("RectangleShape2D_3opl0")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_ocsrq")
+
+[node name="PathFollower" parent="Path2D" instance=ExtResource("1_r40rm")]
+position = Vector2(96, 482)
+rotation = -0.0302938
+speed = 50
+pause_when_node_reached = false
+
+[node name="Enemy" parent="Path2D/PathFollower" instance=ExtResource("2_6q4t8")]
