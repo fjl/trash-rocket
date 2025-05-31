@@ -14,5 +14,5 @@ position = Vector2(64, 51)
 
 [node name="Rocket" parent="." instance=ExtResource("2_0xm2m")]
 
-[node name="Sprite2D" parent="." instance=ExtResource("3_h2yge")]
+[node name="Trashcan1" parent="." instance=ExtResource("3_h2yge")]
 position = Vector2(938, 504)
