@@ -1,9 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxcylqfpor7l"]
+[gd_scene load_steps=6 format=3 uid="uid://bxcylqfpor7l"]
 
 [ext_resource type="Script" uid="uid://bgm13k4u6ial1" path="res://level.gd" id="1_fj03e"]
-[ext_resource type="Texture2D" uid="uid://3pwrtg3hflv3" path="res://assets/rocket/rocket.png" id="2_5gt1y"]
+[ext_resource type="Texture2D" uid="uid://c7rjtmjwlm1qb" path="res://assets/rocket/rocket.png" id="2_5gt1y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2l15"]
+bg_color = Color(0.233925, 0.233925, 0.233925, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gt1y"]
+bg_color = Color(1, 0.8275, 0.31, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="Theme" id="Theme_r2l15"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_r2l15")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_5gt1y")
 
 [node name="Rocket" type="Control" node_paths=PackedStringArray("rocket")]
 layout_mode = 3
@@ -27,5 +51,6 @@ offset_top = -28.0
 offset_right = -3.0
 offset_bottom = 111.0
 theme = SubResource("Theme_r2l15")
+value = 42.7
 fill_mode = 3
 show_percentage = false
