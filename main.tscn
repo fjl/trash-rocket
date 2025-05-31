@@ -43,7 +43,7 @@ position = Vector2(37, 40)
 position = Vector2(938, 504)
 
 [node name="Trashcan2" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(364, 65)
+position = Vector2(501, 152)
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
@@ -68,11 +68,11 @@ position = Vector2(1042, 280)
 shape = SubResource("RectangleShape2D_7mycd")
 
 [node name="Enemy2" parent="." instance=ExtResource("6_272bh")]
-position = Vector2(301, 385)
+position = Vector2(220, 231)
 rotation = -1.19475
 collision_layer = 0
 collision_mask = 0
-spinning_speed = 0.0
+static_guarding = true
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_5vw27")
@@ -82,6 +82,7 @@ position = Vector2(388, 419)
 rotation = 0.00544954
 speed = 45
 pause_when_node_reached = false
+show_debug = false
 
 [node name="Enemy" parent="Path2D/PathFollower" instance=ExtResource("6_272bh")]
 collision_layer = 0
@@ -95,4 +96,4 @@ offset_right = 967.0
 offset_bottom = 80.0
 rotation = 0.00084424
 exitSign = NodePath("../ExitSign")
-goalItems = 1
+goalItems = 2
