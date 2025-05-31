@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbce180lrj556"]
+[gd_scene load_steps=5 format=3 uid="uid://wqkbeeibuqw1"]
 
-[ext_resource type="Script" uid="uid://yb6uyi65hifh" path="res://enemy.gd" id="1_s7bn3"]
+[ext_resource type="Script" path="res://enemy.gd" id="1_s7bn3"]
 [ext_resource type="Texture2D" uid="uid://8osnkvqy3mrr" path="res://icon.svg" id="2_2hac7"]
 [ext_resource type="Texture2D" uid="uid://c3nial7gqepg6" path="res://FOV.png" id="2_s7bn3"]
 
@@ -24,7 +24,7 @@ texture = ExtResource("2_s7bn3")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("ConvexPolygonShape2D_e6d4v")

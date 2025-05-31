@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsnsj8dm3nd5b"]
+[gd_scene load_steps=6 format=3 uid="uid://c7gc3e4f8a6ea"]
 
-[ext_resource type="Script" uid="uid://dydcdupsv8lmw" path="res://enemy_testing.gd" id="1_qyon3"]
-[ext_resource type="PackedScene" uid="uid://cbce180lrj556" path="res://Enemy.tscn" id="2_ebqjd"]
+[ext_resource type="Script" path="res://enemy_testing.gd" id="1_qyon3"]
+[ext_resource type="PackedScene" uid="uid://wqkbeeibuqw1" path="res://Enemy.tscn" id="2_ebqjd"]
 [ext_resource type="Texture2D" uid="uid://8osnkvqy3mrr" path="res://icon.svg" id="3_ebqjd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ebqjd"]
@@ -28,7 +28,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_ebqjd")
 
 [node name="Area2D" type="Area2D" parent="Player" groups=["Player"]]
-collision_layer = 2
+collision_layer = 10
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
