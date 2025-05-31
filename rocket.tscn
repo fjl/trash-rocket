@@ -1,14 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxcylqfpor7l"]
+[gd_scene load_steps=4 format=3 uid="uid://bxcylqfpor7l"]
 
 [ext_resource type="Script" uid="uid://bgm13k4u6ial1" path="res://level.gd" id="1_fj03e"]
+[ext_resource type="Texture2D" uid="uid://3pwrtg3hflv3" path="res://assets/rocket/rocket.png" id="2_5gt1y"]
+
+[sub_resource type="Theme" id="Theme_r2l15"]
 
 [node name="Rocket" type="Control" node_paths=PackedStringArray("rocket")]
 layout_mode = 3
 anchors_preset = 0
+offset_left = 13.0
+offset_top = -45.0
+offset_right = 13.0
+offset_bottom = -45.0
 script = ExtResource("1_fj03e")
 rocket = NodePath("ProgressBar")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-16.8438, 45.7657)
+scale = Vector2(0.13732, 0.0815447)
+texture = ExtResource("2_5gt1y")
+
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 0
-offset_right = 4.0
-offset_bottom = 27.0
+offset_left = -26.0
+offset_top = -28.0
+offset_right = -3.0
+offset_bottom = 111.0
+theme = SubResource("Theme_r2l15")
+fill_mode = 3
+show_percentage = false
