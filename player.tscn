@@ -4,13 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://b5cahthcw3boh" path="res://assets/player/kingsley.jpeg" id="2_onrkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
+size = Vector2(41, 50)
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_onrkg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_sh265")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_onrkg")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_sh265")
+debug_color = Color(0.893547, 0.000223327, 0.783892, 0.42)
