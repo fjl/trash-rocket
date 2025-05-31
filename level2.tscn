@@ -1,12 +1,13 @@
-[gd_scene load_steps=30 format=3 uid="uid://bmtxjib87m1mh"]
+[gd_scene load_steps=31 format=3 uid="uid://bmtxjib87m1mh"]
 
 [ext_resource type="Texture2D" uid="uid://sjk7kk7c4ae3" path="res://assets/background/second_level.png" id="1_8i3m3"]
-[ext_resource type="PackedScene" path="res://rocket.tscn" id="1_r6vdu"]
+[ext_resource type="PackedScene" uid="uid://bxcylqfpor7l" path="res://rocket.tscn" id="1_r6vdu"]
 [ext_resource type="PackedScene" uid="uid://ckrjvxllmg0d7" path="res://path_following/PathFollower.tscn" id="1_r40rm"]
 [ext_resource type="PackedScene" uid="uid://wqkbeeibuqw1" path="res://Enemy.tscn" id="2_6q4t8"]
 [ext_resource type="PackedScene" path="res://trashcan.tscn" id="3_6q4t8"]
 [ext_resource type="PackedScene" uid="uid://dnqf1s4s3q11e" path="res://player.tscn" id="4_8tcn8"]
 [ext_resource type="PackedScene" uid="uid://bfi3whvl8qial" path="res://car/car_enemy.tscn" id="6_21xmu"]
+[ext_resource type="PackedScene" path="res://exit_sign.tscn" id="6_rmy57"]
 
 [sub_resource type="Curve2D" id="Curve2D_ocsrq"]
 _data = {
@@ -51,7 +52,7 @@ size = Vector2(37, 116.5)
 size = Vector2(32, 73.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rmy57"]
-size = Vector2(36, 438)
+size = Vector2(30, 438)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qulpo"]
 size = Vector2(53, 28)
@@ -69,7 +70,7 @@ size = Vector2(27, 391)
 size = Vector2(157, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mw4xc"]
-size = Vector2(108, 32)
+size = Vector2(97, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8rrl"]
 size = Vector2(8, 110)
@@ -215,7 +216,7 @@ position = Vector2(623, 34.25)
 shape = SubResource("RectangleShape2D_8i3m3")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Walls"]
-position = Vector2(625, 355)
+position = Vector2(622, 355)
 shape = SubResource("RectangleShape2D_rmy57")
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Walls"]
@@ -239,7 +240,7 @@ position = Vector2(948.5, 367.5)
 shape = SubResource("RectangleShape2D_s8oj7")
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="Walls"]
-position = Vector2(737, 461)
+position = Vector2(742.5, 461)
 shape = SubResource("RectangleShape2D_mw4xc")
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="Walls"]
@@ -254,11 +255,15 @@ shape = SubResource("RectangleShape2D_lwvnx")
 position = Vector2(702, 275.5)
 shape = SubResource("RectangleShape2D_4ou0f")
 
-[node name="Rocket" parent="." instance=ExtResource("1_r6vdu")]
+[node name="ExitSign" parent="Walls" instance=ExtResource("6_rmy57")]
+position = Vector2(943, 537)
+
+[node name="Rocket" parent="." node_paths=PackedStringArray("exitSign") instance=ExtResource("1_r6vdu")]
 offset_left = 1024.0
 offset_top = 179.0
 offset_right = 1024.0
 offset_bottom = 179.0
+exitSign = NodePath("../Walls/ExitSign")
 goalItems = 7
 
 [node name="Path2D4" type="Path2D" parent="."]
