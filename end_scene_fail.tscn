@@ -1,7 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bt8fy8t6mwji7"]
+[gd_scene load_steps=3 format=3 uid="uid://b4w2dh2cdsfr4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3x5r4"]
 font_size = 80
+
+[sub_resource type="GDScript" id="GDScript_3x5r4"]
+script/source = "extends Button
+
+
+func _on_pressed() -> void:
+	TheGame.restart()
+"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,11 +19,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 238.0
-offset_top = 220.0
-offset_right = 829.0
-offset_bottom = 330.0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
 text = "You have failed"
 label_settings = SubResource("LabelSettings_3x5r4")
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Restart"
+script = SubResource("GDScript_3x5r4")
+
+[connection signal="pressed" from="VBoxContainer/Button" to="VBoxContainer/Button" method="_on_pressed"]

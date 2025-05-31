@@ -14,3 +14,6 @@ func _on_level_failed():
 	print("level failed")
 	get_tree().change_scene_to_file("res://end_scene_fail.tscn")
 	pass
+	
+func restart()->void:
+	get_tree().change_scene_to_file("res://main.tscn")
