@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://chjuvj3fex0wj"]
+[gd_scene load_steps=25 format=3 uid="uid://bmtxjib87m1mh"]
 
 [ext_resource type="PackedScene" uid="uid://ckrjvxllmg0d7" path="res://path_following/PathFollower.tscn" id="1_r40rm"]
-[ext_resource type="PackedScene" uid="uid://wqkbeeibuqw1" path="res://Enemy.tscn" id="2_6q4t8"]
+[ext_resource type="PackedScene" path="res://Enemy.tscn" id="2_6q4t8"]
+[ext_resource type="PackedScene" path="res://trashcan.tscn" id="3_6q4t8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocsrq"]
 size = Vector2(159, 36.5)
@@ -39,9 +40,36 @@ size = Vector2(74, 43)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3opl0"]
 size = Vector2(42, 126)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dc5vx"]
+size = Vector2(35, 389)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8oj7"]
+size = Vector2(162, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mw4xc"]
+size = Vector2(138, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8rrl"]
+size = Vector2(36, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwvnx"]
+size = Vector2(89, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ou0f"]
+size = Vector2(152, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4k5bj"]
+size = Vector2(156, 27)
+
 [sub_resource type="Curve2D" id="Curve2D_ocsrq"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 96, 482, 0, 0, 0, 0, 195, 479, 0, 0, 0, 0, 198, 638, 0, 0, 0, 0, 90, 644, 0, 0, 0, 0, 90, 592, 0, 0, 0, 0, 163, 589, 0, 0, 0, 0, 163, 501, 0, 0, 0, 0, 96, 499, 0, 0, 0, 0, 96, 482)
+"points": PackedVector2Array(0, 0, 0, 0, 110, 444, 0, 0, 0, 0, 116, 470, 0, 0, 0, 0, 127, 482, 0, 0, 0, 0, 181, 482, 0, 0, 0, 0, 193, 493, 0, 0, 0, 0, 198, 638, 0, 0, 0, 0, 181, 653, 0, 0, 0, 0, 162, 631, 0, 0, 0, 0, 180, 613, 0, 0, 0, 0, 180, 508, 0, 0, 0, 0, 168, 497, 0, 0, 0, 0, 96, 499, 0, 0, 0, 0, 88, 491, 0, 0, 0, 0, 91, 454, 0, 0, 0, 0, 95, 443, 0, 0, 0, 0, 110, 444)
+}
+point_count = 16
+
+[sub_resource type="Curve2D" id="Curve2D_hp87d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 743, 256, 0, 0, 0, 0, 844, 257, 0, 0, 0, 0, 858, 265, 0, 0, 0, 0, 859, 312, 0, 0, 0, 0, 845, 322, 0, 0, 0, 0, 741, 321, 0, 0, 0, 0, 731, 309, 0, 0, 0, 0, 733, 264, 0, 0, 0, 0, 743, 256)
 }
 point_count = 9
 
@@ -107,13 +135,72 @@ shape = SubResource("RectangleShape2D_jifot")
 position = Vector2(169, 432)
 shape = SubResource("RectangleShape2D_3opl0")
 
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Walls"]
+position = Vector2(852.5, 190.5)
+shape = SubResource("RectangleShape2D_dc5vx")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Walls"]
+position = Vector2(946, 369.5)
+shape = SubResource("RectangleShape2D_s8oj7")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="Walls"]
+position = Vector2(752, 465)
+shape = SubResource("RectangleShape2D_mw4xc")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="Walls"]
+position = Vector2(802, 523)
+shape = SubResource("RectangleShape2D_r8rrl")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="Walls"]
+position = Vector2(735.5, 192)
+shape = SubResource("RectangleShape2D_lwvnx")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="Walls"]
+position = Vector2(701, 277)
+shape = SubResource("RectangleShape2D_4ou0f")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="Walls"]
+position = Vector2(762, 359)
+shape = SubResource("RectangleShape2D_4k5bj")
+
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_ocsrq")
 
 [node name="PathFollower" parent="Path2D" instance=ExtResource("1_r40rm")]
-position = Vector2(96, 482)
-rotation = -0.0302938
+position = Vector2(110, 444)
+rotation = 1.344
 speed = 50
 pause_when_node_reached = false
 
 [node name="Enemy" parent="Path2D/PathFollower" instance=ExtResource("2_6q4t8")]
+
+[node name="TrashPickup" parent="." instance=ExtResource("3_6q4t8")]
+position = Vector2(125, 387)
+
+[node name="TrashPickup2" parent="." instance=ExtResource("3_6q4t8")]
+position = Vector2(88, 610)
+
+[node name="TrashPickup3" parent="." instance=ExtResource("3_6q4t8")]
+position = Vector2(374, 385)
+
+[node name="TrashPickup4" parent="." instance=ExtResource("3_6q4t8")]
+position = Vector2(798, 118)
+
+[node name="TrashPickup5" parent="." instance=ExtResource("3_6q4t8")]
+position = Vector2(706, 406)
+
+[node name="TrashPickup6" parent="." instance=ExtResource("3_6q4t8")]
+position = Vector2(825, 647)
+
+[node name="TrashPickup7" parent="." instance=ExtResource("3_6q4t8")]
+position = Vector2(323, 117)
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_hp87d")
+
+[node name="PathFollower" parent="Path2D2" instance=ExtResource("1_r40rm")]
+position = Vector2(743, 256)
+rotation = 0.00990067
+speed = 50
+
+[node name="Enemy" parent="Path2D2/PathFollower" instance=ExtResource("2_6q4t8")]
