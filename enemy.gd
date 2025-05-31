@@ -2,12 +2,17 @@ extends CharacterBody2D
 
 @export var static_guarding:bool
 @export var spinning_speed:float
+@export var pause_at_each_node:bool
+@export var pause_time:float
+
+@export var parent_path_follower:PathFollower
 
 @export var field_of_vision:Area2D
 @export var obstacle_check_ray:RayCast2D
 @export var failTimer: Timer
 @export var character: Sprite2D
 
+@onready var pause_timer: Timer = $PauseTimer
 
 
 var player_in_field:bool = false
@@ -18,6 +23,10 @@ func _ready() -> void:
 	field_of_vision.area_entered.connect( _on_area_2d_player_entered )
 	field_of_vision.area_exited.connect( _on_area_2d_player_exited )
 	failTimer.timeout.connect(_on_fail_timer_timeout)
+	if pause_at_each_node:
+		parent_path_follower.pause_when_node_reached = true
+		parent_path_follower.point_reached.connect( _on_node_reached )
+		
 	
 func _physics_process( delta: float) -> void:
 	#--- spinning -----
@@ -53,3 +62,10 @@ func _on_area_2d_player_exited( area: Area2D ) -> void:
 
 func _on_fail_timer_timeout() -> void:
 	Signals.level_failed.emit()
+
+
+func _on_node_reached() -> void:
+	pause_timer.start()
+
+func _on_pause_timer_timeout() -> void:
+	parent_path_follower.running = true
