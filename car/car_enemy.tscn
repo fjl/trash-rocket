@@ -14,7 +14,7 @@ script = ExtResource("1_nat1k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-rotation = -1.5708
+rotation = 1.5708
 texture = ExtResource("2_ip71k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
