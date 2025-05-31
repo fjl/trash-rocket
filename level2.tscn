@@ -23,7 +23,7 @@ point_count = 9
 
 [sub_resource type="Curve2D" id="Curve2D_6q4t8"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 883, 333, 0, 0, 0, 0, 884, 147, 0, 0, 0, 0, 816, 145, 0, 0, 0, 0, 816, 152, 0, 0, 0, 0, 879, 152, 0, 0, 0, 0, 879, 333, 0, 0, 0, 0, 883, 333)
+"points": PackedVector2Array(0, 0, 0, 0, 881, 466, 0, 0, 0, 0, 884, 147, 0, 0, 0, 0, 816, 145, 0, 0, 0, 0, 816, 152, 0, 0, 0, 0, 879, 152, 0, 0, 0, 0, 872, 467, 0, 0, 0, 0, 881, 467)
 }
 point_count = 7
 
@@ -40,7 +40,7 @@ size = Vector2(47, 664)
 size = Vector2(42.5, 121.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tcn8"]
-size = Vector2(228, 30)
+size = Vector2(229, 33)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r6vdu"]
 size = Vector2(29, 408)
@@ -55,7 +55,7 @@ size = Vector2(32, 73.5)
 size = Vector2(30, 438)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qulpo"]
-size = Vector2(53, 28)
+size = Vector2(49, 33)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jifot"]
 size = Vector2(74, 43)
@@ -122,7 +122,7 @@ position = Vector2(374, 385)
 position = Vector2(798, 118)
 
 [node name="TrashPickup5" parent="." instance=ExtResource("3_6q4t8")]
-position = Vector2(706, 406)
+position = Vector2(714, 408)
 
 [node name="TrashPickup6" parent="." instance=ExtResource("3_6q4t8")]
 position = Vector2(825, 647)
@@ -149,8 +149,8 @@ parent_path_follower = NodePath("..")
 curve = SubResource("Curve2D_6q4t8")
 
 [node name="PathFollower" parent="Path2D3" instance=ExtResource("1_r40rm")]
-position = Vector2(883, 333)
-rotation = -1.56542
+position = Vector2(881, 466)
+rotation = -1.56139
 speed = 50
 pause_when_node_reached = false
 show_debug = false
@@ -203,7 +203,7 @@ position = Vector2(165.75, 22.25)
 shape = SubResource("RectangleShape2D_6q4t8")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Walls"]
-position = Vector2(111, 252)
+position = Vector2(111.5, 250.5)
 shape = SubResource("RectangleShape2D_8tcn8")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Walls"]
@@ -223,7 +223,7 @@ position = Vector2(622, 355)
 shape = SubResource("RectangleShape2D_rmy57")
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Walls"]
-position = Vector2(322.5, 253)
+position = Vector2(324.5, 250.5)
 shape = SubResource("RectangleShape2D_qulpo")
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="Walls"]
