@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://do5qghsbs3aog"]
+[gd_scene load_steps=7 format=3 uid="uid://do5qghsbs3aog"]
 
 [ext_resource type="PackedScene" uid="uid://ckrjvxllmg0d7" path="res://path_following/PathFollower.tscn" id="1_c3vis"]
 [ext_resource type="Script" uid="uid://bpw3nxmjy3lxi" path="res://path_following/path_follow_test.gd" id="1_v0fbc"]
+[ext_resource type="PackedScene" uid="uid://bfi3whvl8qial" path="res://car/car_enemy.tscn" id="3_y2771"]
 
 [sub_resource type="Curve2D" id="Curve2D_lundw"]
 _data = {
@@ -11,6 +12,12 @@ point_count = 8
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mf2e8"]
 size = Vector2(50, 50)
+
+[sub_resource type="Curve2D" id="Curve2D_y2771"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 537, -151, 0, 0, 0, 0, 541, 735)
+}
+point_count = 2
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_v0fbc")
@@ -22,8 +29,10 @@ curve = SubResource("Curve2D_lundw")
 unique_name_in_owner = true
 position = Vector2(255, 121)
 rotation = 0.0783278
-speed = 100
+loop = false
+speed = 500
 point_reached_range = 5.0
+pause_when_node_reached = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollower"]
 texture = SubResource("PlaceholderTexture2D_mf2e8")
@@ -39,3 +48,15 @@ offset_bottom = 39.0
 disabled = true
 text = "continue
 "
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_y2771")
+
+[node name="PathFollower" parent="Path2D2" instance=ExtResource("1_c3vis")]
+position = Vector2(537, -151)
+rotation = 1.56628
+speed = 500
+pause_when_node_reached = false
+pause_seconds_at_end = 2.0
+
+[node name="CarEnemy" parent="Path2D2/PathFollower" instance=ExtResource("3_y2771")]
