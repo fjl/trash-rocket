@@ -11,7 +11,7 @@ script = ExtResource("1_vc7cx")
 area = NodePath("Area2D")
 
 [node name="TrashCan" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_mlex6")
 
 [node name="Area2D" type="Area2D" parent="."]

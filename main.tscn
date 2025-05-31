@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bv5petwbautdm" path="res://trashcan.tscn" id="3_h2yge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
-size = Vector2(760, 59)
+size = Vector2(760, 87)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
 size = Vector2(1023, 41)
@@ -39,7 +39,7 @@ position = Vector2(938, 504)
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
-position = Vector2(642, 310.5)
+position = Vector2(642, 293.5)
 shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
