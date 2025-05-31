@@ -39,7 +39,7 @@ func _physics_process( delta: float) -> void:
 	
 	#--- detection ------
 	if player_in_field:
-		modulate = Color.ORANGE
+		#modulate = Color.ORANGE
 		obstacle_check_ray.look_at( player_area.global_position )
 		obstacle_check_ray.force_raycast_update()
 		if obstacle_check_ray.is_colliding():

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bxcylqfpor7l" path="res://rocket.tscn" id="1_r6vdu"]
 [ext_resource type="PackedScene" uid="uid://ckrjvxllmg0d7" path="res://path_following/PathFollower.tscn" id="1_r40rm"]
 [ext_resource type="PackedScene" uid="uid://wqkbeeibuqw1" path="res://Enemy.tscn" id="2_6q4t8"]
-[ext_resource type="PackedScene" path="res://trashcan.tscn" id="3_6q4t8"]
+[ext_resource type="PackedScene" uid="uid://bv5petwbautdm" path="res://trashcan.tscn" id="3_6q4t8"]
 [ext_resource type="PackedScene" uid="uid://dnqf1s4s3q11e" path="res://player.tscn" id="4_8tcn8"]
 [ext_resource type="PackedScene" uid="uid://bfi3whvl8qial" path="res://car/car_enemy.tscn" id="6_21xmu"]
 [ext_resource type="PackedScene" path="res://exit_sign.tscn" id="6_rmy57"]
@@ -102,6 +102,7 @@ position = Vector2(110, 444)
 rotation = 1.344
 speed = 50
 pause_when_node_reached = false
+show_debug = false
 
 [node name="Enemy" parent="Path2D/PathFollower" node_paths=PackedStringArray("parent_path_follower") instance=ExtResource("2_6q4t8")]
 pause_at_each_node = true
@@ -137,6 +138,7 @@ position = Vector2(743, 256)
 rotation = 0.00990067
 speed = 50
 pause_when_node_reached = false
+show_debug = false
 
 [node name="Enemy" parent="Path2D2/PathFollower" node_paths=PackedStringArray("parent_path_follower") instance=ExtResource("2_6q4t8")]
 pause_at_each_node = true
@@ -151,6 +153,7 @@ position = Vector2(883, 333)
 rotation = -1.56542
 speed = 50
 pause_when_node_reached = false
+show_debug = false
 
 [node name="Enemy" parent="Path2D3/PathFollower" instance=ExtResource("2_6q4t8")]
 
@@ -274,6 +277,7 @@ position = Vector2(601, 781)
 rotation = -1.55936
 speed = 80
 pause_when_node_reached = false
+show_debug = false
 
 [node name="CarEnemy" parent="Path2D4/PathFollower" instance=ExtResource("6_21xmu")]
 position = Vector2(147.981, -8.3371)
