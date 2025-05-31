@@ -14,3 +14,23 @@ config/name="Trash-Rocket"
 run/main_scene="uid://bvm53rqbpwg22"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Signals="*res://Signals.gd"
+
+[display]
+
+window/size/viewport_width=1024
+window/size/viewport_height=576
+
+[global_group]
+
+Player=""
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemies"
+2d_physics/layer_4="Item"
