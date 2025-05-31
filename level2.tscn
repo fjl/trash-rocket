@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bp64oap7dsaxu"]
+[gd_scene load_steps=16 format=3 uid="uid://chjuvj3fex0wj"]
 
 [ext_resource type="PackedScene" uid="uid://ckrjvxllmg0d7" path="res://path_following/PathFollower.tscn" id="1_r40rm"]
 [ext_resource type="PackedScene" uid="uid://wqkbeeibuqw1" path="res://Enemy.tscn" id="2_6q4t8"]
@@ -45,7 +45,7 @@ _data = {
 }
 point_count = 9
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 position = Vector2(-71, -97)
 
 [node name="Walls" type="StaticBody2D" parent="."]

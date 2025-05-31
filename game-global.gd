@@ -9,5 +9,6 @@ func _on_level_objective_reached():
 	pass
 	
 func _on_level_failed():
-	get_tree().change_scene_to_file("res://end_scene_success.tscn")
+	print("level failed")
+	get_tree().change_scene_to_file("res://end_scene_fail.tscn")
 	pass
