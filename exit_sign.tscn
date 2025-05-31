@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7kowelj2ei6d"]
+
+[ext_resource type="Script" uid="uid://bc2fcaifghlib" path="res://exit_sign.gd" id="1_1cm2l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
+size = Vector2(130, 39)
+
+[sub_resource type="Gradient" id="Gradient_7mycd"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_272bh"]
+gradient = SubResource("Gradient_7mycd")
+
+[sub_resource type="LabelSettings" id="LabelSettings_7mycd"]
+font_size = 21
+
+[node name="ExitSign" type="Area2D" node_paths=PackedStringArray("timer")]
+collision_mask = 8
+script = ExtResource("1_1cm2l")
+timer = NodePath("Timer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_272bh")
+
+[node name="ExitSign" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture1D_272bh")
+region_enabled = true
+region_rect = Rect2(0, 0, 130, 40)
+
+[node name="ExitLabel" type="Label" parent="ExitSign"]
+offset_left = -18.0
+offset_top = -12.0
+offset_right = 22.0
+offset_bottom = 51.0
+text = "Exit
+"
+label_settings = SubResource("LabelSettings_7mycd")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.192
+one_shot = true

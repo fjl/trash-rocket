@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://bvm53rqbpwg22"]
+[gd_scene load_steps=12 format=3 uid="uid://bvm53rqbpwg22"]
 
 [ext_resource type="Texture2D" uid="uid://b65cahgkihvhu" path="res://assets/background/first_level.png" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dnqf1s4s3q11e" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bxcylqfpor7l" path="res://rocket.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bv5petwbautdm" path="res://trashcan.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://ckrjvxllmg0d7" path="res://path_following/PathFollower.tscn" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://c7kowelj2ei6d" path="res://exit_sign.tscn" id="6_5vw27"]
 [ext_resource type="PackedScene" uid="uid://wqkbeeibuqw1" path="res://Enemy.tscn" id="6_272bh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
@@ -22,14 +23,6 @@ _data = {
 }
 point_count = 5
 
-[sub_resource type="Gradient" id="Gradient_7mycd"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_272bh"]
-gradient = SubResource("Gradient_7mycd")
-
-[sub_resource type="LabelSettings" id="LabelSettings_7mycd"]
-font_size = 21
-
 [node name="Node2D" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -39,17 +32,11 @@ texture = ExtResource("1_1bvp3")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(512, 287)
 
+[node name="ExitSign" parent="." instance=ExtResource("6_5vw27")]
+position = Vector2(128, 552)
+
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(37, 40)
-
-[node name="Rocket" parent="." node_paths=PackedStringArray("exitSign") instance=ExtResource("2_0xm2m")]
-offset_left = 967.0
-offset_top = 80.0
-offset_right = 967.0
-offset_bottom = 80.0
-rotation = 0.00084424
-exitSign = NodePath("../ExitSign")
-goalItems = 1
 
 [node name="Trashcan1" parent="." instance=ExtResource("3_h2yge")]
 position = Vector2(938, 504)
@@ -84,6 +71,7 @@ position = Vector2(301, 385)
 rotation = -1.19475
 collision_layer = 0
 collision_mask = 0
+spinning_speed = 0.0
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_5vw27")
@@ -97,18 +85,13 @@ pause_when_node_reached = false
 [node name="Enemy" parent="Path2D/PathFollower" instance=ExtResource("6_272bh")]
 collision_layer = 0
 collision_mask = 0
+spinning_speed = 0.0
 
-[node name="ExitSign" type="Sprite2D" parent="."]
-position = Vector2(128, 552)
-texture = SubResource("GradientTexture1D_272bh")
-region_enabled = true
-region_rect = Rect2(0, 0, 130, 40)
-
-[node name="ExitLabel" type="Label" parent="ExitSign"]
-offset_left = -18.0
-offset_top = -12.0
-offset_right = 22.0
-offset_bottom = 51.0
-text = "Exit
-"
-label_settings = SubResource("LabelSettings_7mycd")
+[node name="Rocket" parent="." node_paths=PackedStringArray("exitSign") instance=ExtResource("2_0xm2m")]
+offset_left = 967.0
+offset_top = 80.0
+offset_right = 967.0
+offset_bottom = 80.0
+rotation = 0.00084424
+exitSign = NodePath("../ExitSign")
+goalItems = 1
