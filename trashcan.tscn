@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bv5petwbautdm"]
 
-[ext_resource type="Texture2D" uid="uid://101ct44abswx" path="res://assets/can/trashcan.png" id="1_mlex6"]
+[ext_resource type="Texture2D" uid="uid://c33o3g68fueqs" path="res://assets/can/trashcan.png" id="1_mlex6"]
 [ext_resource type="Script" uid="uid://m7r0dj6od0r3" path="res://trashcan.gd" id="2_mlex6"]
 
 [node name="Sprite2D" type="Sprite2D"]
