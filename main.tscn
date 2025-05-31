@@ -1,9 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvm53rqbpwg22"]
+[gd_scene load_steps=8 format=3 uid="uid://bvm53rqbpwg22"]
 
 [ext_resource type="Texture2D" uid="uid://b65cahgkihvhu" path="res://assets/background/first_level.png" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dnqf1s4s3q11e" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bxcylqfpor7l" path="res://rocket.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bv5petwbautdm" path="res://trashcan.tscn" id="3_h2yge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(760, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
+size = Vector2(1023, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+size = Vector2(47, 664)
 
 [node name="Node2D" type="Node2D"]
 
@@ -26,3 +35,25 @@ goalItems = 1
 
 [node name="Trashcan1" parent="." instance=ExtResource("3_h2yge")]
 position = Vector2(938, 504)
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(642, 310.5)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(511.5, -21.5)
+shape = SubResource("RectangleShape2D_lquwl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(511, 595)
+shape = SubResource("RectangleShape2D_lquwl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-17, 288)
+shape = SubResource("RectangleShape2D_7mycd")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
+position = Vector2(1042, 280)
+shape = SubResource("RectangleShape2D_7mycd")
