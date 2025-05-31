@@ -7,14 +7,21 @@ signal point_reached()
 @export var point_reached_range:= 10.0
 @export var pause_when_node_reached:= true
 @export var show_debug:= false
+@export var pause_seconds_at_end:= 0.0
 
 var _child_to_move: Node2D
 var _next_point:= 1
 var _path: Path2D
+var _timer:= Timer.new()
 
 func _ready() -> void:
 	_path = (get_parent() as Path2D)
 	_child_to_move = get_child(0)
+	_timer.one_shot = true
+	_timer.wait_time = max(pause_seconds_at_end, 0.01)
+	_timer.autostart = false
+	_timer.timeout.connect(set.bind("running", true))
+	add_child(_timer)
 
 func _get_configuration_warning():
 	if get_child_count() != 1 or get_child(0) is not Node2D:
@@ -37,12 +44,15 @@ func _has_reached_next_node() -> void:
 	var distance_to_next_point:= _child_to_move.position.distance_to(_node_point_local_position(_next_point))
 
 	if distance_to_next_point < point_reached_range:
-		_next_point = _next_point + 1 if _path.curve.point_count > _next_point + 1 else 1
-		
-		if _next_point == 1:
-			progress = 0
+		var reached_path_end:= _path.curve.point_count == _next_point + 1
+		_next_point = _next_point + 1 if not reached_path_end else 1
 		
 		point_reached.emit()
+		
+		if reached_path_end:
+			running = false
+			progress = 0.0
+			_timer.start()
 		
 		if pause_when_node_reached:
 			running = false

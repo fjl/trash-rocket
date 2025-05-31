@@ -1,9 +1,11 @@
 extends Control
 
 @export var rocket: ProgressBar
+@export var exitSign: Node2D
 @export var goalItems: int
 
-var items = 0
+var items: int = 0
+var allItemsCleared: bool = false
 
 func _ready() -> void:
 	rocket.max_value = goalItems
@@ -13,5 +15,4 @@ func _on_item_pickedUp():
 	items = items + 1
 	rocket.value = items
 	if items >= goalItems:
-		print("you are done")
-		Signals.level_objective_reached.emit()
+		allItemsCleared = true

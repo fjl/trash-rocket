@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvm53rqbpwg22"]
+[gd_scene load_steps=14 format=3 uid="uid://bvm53rqbpwg22"]
 
 [ext_resource type="Texture2D" uid="uid://b65cahgkihvhu" path="res://assets/background/first_level.png" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dnqf1s4s3q11e" path="res://player.tscn" id="1_ig7tw"]
@@ -22,6 +22,14 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="Gradient" id="Gradient_7mycd"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_272bh"]
+gradient = SubResource("Gradient_7mycd")
+
+[sub_resource type="LabelSettings" id="LabelSettings_7mycd"]
+font_size = 21
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -34,15 +42,20 @@ position = Vector2(512, 287)
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(37, 40)
 
-[node name="Rocket" parent="." instance=ExtResource("2_0xm2m")]
-offset_left = 992.0
-offset_top = 19.0
-offset_right = 992.0
-offset_bottom = 19.0
+[node name="Rocket" parent="." node_paths=PackedStringArray("exitSign") instance=ExtResource("2_0xm2m")]
+offset_left = 967.0
+offset_top = 80.0
+offset_right = 967.0
+offset_bottom = 80.0
+rotation = 0.00084424
+exitSign = NodePath("../ExitSign")
 goalItems = 1
 
 [node name="Trashcan1" parent="." instance=ExtResource("3_h2yge")]
 position = Vector2(938, 504)
+
+[node name="Trashcan2" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(364, 65)
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
@@ -84,3 +97,18 @@ pause_when_node_reached = false
 [node name="Enemy" parent="Path2D/PathFollower" instance=ExtResource("6_272bh")]
 collision_layer = 0
 collision_mask = 0
+
+[node name="ExitSign" type="Sprite2D" parent="."]
+position = Vector2(128, 552)
+texture = SubResource("GradientTexture1D_272bh")
+region_enabled = true
+region_rect = Rect2(0, 0, 130, 40)
+
+[node name="ExitLabel" type="Label" parent="ExitSign"]
+offset_left = -18.0
+offset_top = -12.0
+offset_right = 22.0
+offset_bottom = 51.0
+text = "Exit
+"
+label_settings = SubResource("LabelSettings_7mycd")
