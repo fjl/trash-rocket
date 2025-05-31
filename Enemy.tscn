@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbce180lrj556"]
+
+[ext_resource type="Script" uid="uid://yb6uyi65hifh" path="res://enemy.gd" id="1_s7bn3"]
+[ext_resource type="Texture2D" uid="uid://8osnkvqy3mrr" path="res://icon.svg" id="2_2hac7"]
+[ext_resource type="Texture2D" uid="uid://c3nial7gqepg6" path="res://FOV.png" id="2_s7bn3"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_e6d4v"]
+points = PackedVector2Array(0, 0, 185, -110, 232, -68, 250, 0, 235, 70, 185, 110)
+
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("field_of_vision", "obstacle_check_ray")]
+script = ExtResource("1_s7bn3")
+field_of_vision = NodePath("Area2D")
+obstacle_check_ray = NodePath("RayCast2D")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-7.62939e-06, 0)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_2hac7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(124.79, 0)
+scale = Vector2(3.89, 3.89)
+texture = ExtResource("2_s7bn3")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("ConvexPolygonShape2D_e6d4v")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(250, 0)
+collision_mask = 3
+collide_with_areas = true
+collide_with_bodies = false

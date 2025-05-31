@@ -51,6 +51,10 @@ down={
 ]
 }
 
+[global_group]
+
+Player=""
+
 [layer_names]
 
 2d_physics/layer_1="World"
