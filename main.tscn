@@ -24,7 +24,7 @@ texture = ExtResource("1_1bvp3")
 position = Vector2(512, 287)
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(41, 40)
+position = Vector2(37, 40)
 
 [node name="Rocket" parent="." instance=ExtResource("2_0xm2m")]
 offset_left = 992.0
