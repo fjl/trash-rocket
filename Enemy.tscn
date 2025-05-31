@@ -10,6 +10,7 @@ points = PackedVector2Array(0, 0, 216, -129, 244, -62, 251, -1, 242, 70, 216, 12
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("field_of_vision", "obstacle_check_ray", "failTimer", "character")]
 script = ExtResource("1_s7bn3")
 spinning_speed = 0.1
+pause_time = 0.8
 field_of_vision = NodePath("Area2D")
 obstacle_check_ray = NodePath("RayCast2D")
 failTimer = NodePath("FailTimer")
@@ -44,4 +45,7 @@ collide_with_areas = true
 wait_time = 0.177
 one_shot = true
 
+[node name="PauseTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="FailTimer" to="." method="_on_fail_timer_timeout"]
+[connection signal="timeout" from="PauseTimer" to="." method="_on_pause_timer_timeout"]
