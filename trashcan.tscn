@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bv5petwbautdm"]
+[gd_scene load_steps=8 format=3 uid="uid://bv5petwbautdm"]
 
 [ext_resource type="Script" uid="uid://m7r0dj6od0r3" path="res://trashcan.gd" id="1_vc7cx"]
 [ext_resource type="Texture2D" uid="uid://c33o3g68fueqs" path="res://assets/can/trashcan.png" id="2_mlex6"]
+[ext_resource type="PackedScene" uid="uid://dgsk83sfe86q2" path="res://timed_progress_bar/timed_progress_bar.tscn" id="3_pjyj8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vc7cx"]
 radius = 47.0
@@ -70,7 +71,17 @@ libraries = {
 }
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.5
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TimedProgressBar" parent="CanvasLayer" instance=ExtResource("3_pjyj8")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+offset_top = -56.0
+grow_vertical = 0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

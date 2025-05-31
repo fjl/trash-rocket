@@ -2,7 +2,7 @@ extends Control
 
 signal complete
 
-@export_range(0.1, 10.0, 0.1) var fill_time_seconds:= 2.0
+@export_range(0.1, 10.0, 0.1) var fill_time_seconds:= 0.7
 @export var running:= true
 @export var text:= "searching..."
 
