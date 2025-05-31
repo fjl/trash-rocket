@@ -51,6 +51,5 @@ offset_top = -28.0
 offset_right = -3.0
 offset_bottom = 111.0
 theme = SubResource("Theme_r2l15")
-value = 42.7
 fill_mode = 3
 show_percentage = false
