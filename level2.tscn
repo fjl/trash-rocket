@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bmtxjib87m1mh"]
+[gd_scene load_steps=31 format=3 uid="uid://chjuvj3fex0wj"]
 
 [ext_resource type="Texture2D" uid="uid://sjk7kk7c4ae3" path="res://assets/background/second_level.png" id="1_8i3m3"]
 [ext_resource type="PackedScene" uid="uid://bxcylqfpor7l" path="res://rocket.tscn" id="1_r6vdu"]
@@ -282,4 +282,3 @@ show_debug = false
 [node name="CarEnemy" parent="Path2D4/PathFollower" instance=ExtResource("6_21xmu")]
 position = Vector2(147.981, -8.3371)
 rotation = 1.56852
-scale = Vector2(0.25, 0.25)
