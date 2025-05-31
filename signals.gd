@@ -4,5 +4,5 @@ extends Node
 signal item_picked_up
 
 # level events 
-signal level_objective_reached
+signal level_completed
 signal level_failed
