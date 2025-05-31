@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bv5petwbautdm" path="res://trashcan.tscn" id="3_6q4t8"]
 [ext_resource type="PackedScene" uid="uid://dnqf1s4s3q11e" path="res://player.tscn" id="4_8tcn8"]
 [ext_resource type="PackedScene" uid="uid://bfi3whvl8qial" path="res://car/car_enemy.tscn" id="6_21xmu"]
-[ext_resource type="PackedScene" path="res://exit_sign.tscn" id="6_rmy57"]
+[ext_resource type="PackedScene" uid="uid://boeba82tmxops" path="res://exit_sign.tscn" id="6_rmy57"]
 
 [sub_resource type="Curve2D" id="Curve2D_ocsrq"]
 _data = {
