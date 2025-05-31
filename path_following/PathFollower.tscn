@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckrjvxllmg0d7"]
+
+[ext_resource type="Script" uid="uid://diqwr77ibvuil" path="res://path_following/path_follower.gd" id="1_pt8cu"]
+
+[node name="PathFollower" type="PathFollow2D"]
+script = ExtResource("1_pt8cu")
+show_debug = true

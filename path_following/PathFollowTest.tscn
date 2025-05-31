@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://do5qghsbs3aog"]
+
+[ext_resource type="PackedScene" uid="uid://ckrjvxllmg0d7" path="res://path_following/PathFollower.tscn" id="1_c3vis"]
+[ext_resource type="Script" uid="uid://bpw3nxmjy3lxi" path="res://path_following/path_follow_test.gd" id="1_v0fbc"]
+
+[sub_resource type="Curve2D" id="Curve2D_lundw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 255, 121, 0, 0, 0, 0, 943, 175, 0, 0, 0, 0, 1000, 386, 0, 0, 0, 0, 741, 520, 0, 0, 0, 0, 533, 304, 0, 0, 0, 0, 306, 559, 0, 0, 0, 0, 47, 400, 0, 0, 0, 0, 255, 121)
+}
+point_count = 8
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mf2e8"]
+size = Vector2(50, 50)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_v0fbc")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_lundw")
+
+[node name="PathFollower" parent="Path2D" instance=ExtResource("1_c3vis")]
+unique_name_in_owner = true
+position = Vector2(255, 121)
+rotation = 0.0783278
+speed = 100
+point_reached_range = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollower"]
+texture = SubResource("PlaceholderTexture2D_mf2e8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ContinueButton" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 85.0
+offset_bottom = 39.0
+disabled = true
+text = "continue
+"
