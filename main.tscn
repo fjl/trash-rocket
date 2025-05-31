@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvm53rqbpwg22"]
+[gd_scene load_steps=3 format=3 uid="uid://bvm53rqbpwg22"]
 
 [ext_resource type="PackedScene" uid="uid://dnqf1s4s3q11e" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bxcylqfpor7l" path="res://rocket.tscn" id="2_0xm2m"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -9,3 +10,5 @@ position = Vector2(512, 287)
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(596, 305)
+
+[node name="Rocket" parent="." instance=ExtResource("2_0xm2m")]

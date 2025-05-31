@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxcylqfpor7l"]
+
+[ext_resource type="Script" uid="uid://bgm13k4u6ial1" path="res://game.gd" id="1_fj03e"]
+
+[node name="Rocket" type="Control" node_paths=PackedStringArray("rocket")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fj03e")
+rocket = NodePath("ProgressBar")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_right = 4.0
+offset_bottom = 27.0
