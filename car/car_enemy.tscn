@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfi3whvl8qial"]
 
 [ext_resource type="Script" uid="uid://fr5fvv37i23b" path="res://car/car_enemy.gd" id="1_nat1k"]
-[ext_resource type="Texture2D" uid="uid://ol83xtbmyg6b" path="res://assets/enemy/car_front.png" id="2_ip71k"]
+[ext_resource type="Texture2D" uid="uid://bmcj7m52kt5d2" path="res://assets/enemy/car_front.png" id="2_ip71k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s36jm"]
 size = Vector2(497.38, 310.994)
