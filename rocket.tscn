@@ -9,5 +9,6 @@ script = ExtResource("1_fj03e")
 rocket = NodePath("ProgressBar")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
 offset_right = 4.0
 offset_bottom = 27.0

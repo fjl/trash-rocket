@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bv5petwbautdm"]
 
-[ext_resource type="Texture2D" uid="uid://ly1pd5b25tcs" path="res://assets/can/trashcan.jpg" id="1_3aa6p"]
 [ext_resource type="Script" uid="uid://m7r0dj6od0r3" path="res://trashcan.gd" id="1_vc7cx"]
+[ext_resource type="Texture2D" uid="uid://c33o3g68fueqs" path="res://assets/can/trashcan.png" id="2_mlex6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vc7cx"]
 radius = 47.0
@@ -11,7 +11,8 @@ script = ExtResource("1_vc7cx")
 area = NodePath("Area2D")
 
 [node name="TrashCan" type="Sprite2D" parent="."]
-texture = ExtResource("1_3aa6p")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_mlex6")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
