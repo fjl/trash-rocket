@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c77dqlmwkax04"]
+[gd_scene load_steps=7 format=3 uid="uid://ctxjj330r4tc2"]
 
 [ext_resource type="PackedScene" uid="uid://ckadx6aq70iht" path="res://assets/home_rolled_gif/home_rolled_gif.tscn" id="1_t0s2e"]
 [ext_resource type="Texture2D" uid="uid://diapr5p87cv5k" path="res://assets/screens/win/1.png" id="2_8rgod"]
