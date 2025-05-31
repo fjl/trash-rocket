@@ -1,5 +1,6 @@
 extends Area2D
 
+@export var nextLevel: String
 @export var timer: Timer
 
 func _ready() -> void:
@@ -10,4 +11,4 @@ func _on_area_entered(_area: Area2D) -> void:
 	timer.start()
 	
 func _on_timeout():
-	Signals.level_completed.emit()
+	Signals.level_completed.emit(nextLevel)

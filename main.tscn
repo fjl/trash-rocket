@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bxcylqfpor7l" path="res://rocket.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bv5petwbautdm" path="res://trashcan.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://ckrjvxllmg0d7" path="res://path_following/PathFollower.tscn" id="5_7mycd"]
-[ext_resource type="PackedScene" uid="uid://c7kowelj2ei6d" path="res://exit_sign.tscn" id="6_5vw27"]
+[ext_resource type="PackedScene" uid="uid://boeba82tmxops" path="res://exit_sign.tscn" id="6_5vw27"]
 [ext_resource type="PackedScene" uid="uid://wqkbeeibuqw1" path="res://Enemy.tscn" id="6_272bh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
@@ -34,6 +34,7 @@ position = Vector2(512, 287)
 
 [node name="ExitSign" parent="." instance=ExtResource("6_5vw27")]
 position = Vector2(128, 552)
+nextLevel = "res://level2.tscn"
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(37, 40)
