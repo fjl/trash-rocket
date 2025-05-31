@@ -14,3 +14,4 @@ func _on_item_pickedUp():
 	rocket.value = items
 	if items >= goalItems:
 		print("you are done")
+		Signals.level_objective_reached.emit()
